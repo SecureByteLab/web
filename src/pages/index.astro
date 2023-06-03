@@ -1,66 +1,73 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Card from "@/components/Card.astro";
+import GridLineAnimation from "@/components/GridLineAnimation.astro";
 ---
 
 <Layout
   title="Welcome to SecureByte."
   description="SecureByte is a cyber security open source company that provides a wide range of services to help you drive your business forward."
 >
-  <main>
-    <h1 class="text-4xl font-bold">
-      Welcome to <span class="text-gradient">SecureByte</span>
-    </h1>
-    <p class="instructions">
-      <strong>SecureByte</strong> is a cyber security open source company that provides
-      a wide range of services to help you drive your business forward.
-    </p>
-    <ul class="link-card-grid">
-      <Card
-        href="https://docs.securebyte.zip"
-        title="Documentation"
-        body="Start here if you're new to SecureByte."
-      />
-    </ul>
+  <div
+    class="absolute bottom-0 left-0 right-0 top-0 z-20 grid place-content-center gap-3 overflow-hidden opacity-90 md:gap-4 lg:gap-5 xl:gap-7"
+  >
+    <main class="z-10 grid gap-2 md:gap-4 lg:gap-2 xl:gap-6">
+      <h1 class="text-4xl font-bold">
+        Welcome to <span class="text-gradient">SecureByte</span>
+      </h1>
+      <p class="instructions">
+        <strong>SecureByte</strong> is a cyber security open source company that
+        provides a wide range of services to help you drive your business forward.
+      </p>
+      <ul class="link-card-grid">
+        <Card
+          href="https://docs.securebyte.zip"
+          title="Documentation"
+          body="Start here if you're new to SecureByte."
+        />
+      </ul>
+    </main>
+    <GridLineAnimation />
+  </div>
 
-    <style>
-      main {
-        margin: auto;
-        padding: 1.5rem;
-        max-width: 60ch;
-      }
-      .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-      }
-      .instructions {
-        line-height: 1.6;
-        margin: 1rem 0;
-        border: 1px solid rgba(var(--accent), 25%);
-        background-color: white;
-        padding: 1rem;
-        border-radius: 0.4rem;
-      }
-      .instructions code {
-        font-size: 0.875em;
-        font-weight: bold;
-        background: rgba(var(--accent), 12%);
-        color: rgb(var(--accent));
-        border-radius: 4px;
-        padding: 0.3em 0.45em;
-      }
-      .instructions strong {
-        color: rgb(var(--accent));
-      }
-      .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-      }
-    </style>
-  </main>
+  <style>
+    main {
+      margin: auto;
+      padding: 1.5rem;
+      max-width: 60ch;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    .instructions {
+      line-height: 1.6;
+      margin: 1rem 0;
+      border: 1px solid rgba(var(--accent), 25%);
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      @apply text-neutral-600;
+    }
+    .instructions code {
+      font-size: 0.875em;
+      font-weight: bold;
+      background: rgba(var(--accent), 12%);
+      color: rgb(var(--accent));
+      border-radius: 4px;
+      padding: 0.3em 0.45em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent));
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 1rem;
+      padding: 0;
+    }
+  </style>
 </Layout>
