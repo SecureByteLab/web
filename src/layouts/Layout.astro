@@ -52,7 +52,7 @@ const { title, description } = Astro.props;
       href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Thai+Looped:r,b&display=swap"
     />
   </head>
-  <body>
+  <body class="hide-scrollbar">
     <slot />
   </body>
 </html>
@@ -69,10 +69,22 @@ const { title, description } = Astro.props;
   }
   html {
     font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
+    background-color: #000;
+    color: #fff;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 </style>
