@@ -14,7 +14,7 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global Metadata -->
+    <!-- global metadata -->
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Canonical URL -->
+    <!-- canonical url -->
     <link rel="canonical" href={canonicalURL} />
 
     <!-- og -->
@@ -56,6 +56,7 @@ const { title, description } = Astro.props;
     <slot />
   </body>
 </html>
+
 <style is:global>
   :root {
     --accent: 124, 58, 237;
